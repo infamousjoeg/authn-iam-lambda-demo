@@ -5,6 +5,7 @@ A demonstration using @cyberark Conjur's authn-iam integration with AWS Lambda.
 ## Usage
 
 1. Download [latest zip file](https://github.com/infamousjoeg/authn-iam-lambda-demo/releases/latest) from Releases and upload to AWS Lambda function.
+   Ensure that you unpack and remove the repo contents from the default Github folder. Re-compress the contents so lambda_function.py is in the root of the zip.
 2. Set the following environment values with their relevant values in the Lambda function definition:
    1. `CONJUR_APPLIANCE_URL`: URL of the Conjur appliance.
    2. `CONJUR_ACCOUNT`: Account name.
