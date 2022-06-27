@@ -11,9 +11,12 @@ def lambda_handler(event, context):
     token = os.environ['AWS_SESSION_TOKEN']
     # Set to false if self-signed or LetsEncrypt certificates are used
     ssl_verify=False
-
+    
+    # Use gathered token wtih env to request secret value
     conjur_client = create_conjur_iam_client_from_env(iam_role_name, access_key, secret_key, token, ssl_verify=ssl_verify)
-    conjur_list = conjur_client.list()
+    show_variable = conjur_client.get("cloud/aws/lambda/database/password").decode('utf-8')
     return {
-        "list": conjur_list
+        "Password": show_variable
     }
+
+# Change variable path to match that required within your Conjur instance
