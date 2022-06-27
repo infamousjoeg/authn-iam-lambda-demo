@@ -78,7 +78,7 @@ def create_conjur_iam_api_key(iam_role_name=None, access_key=None, secret_key=No
         secret_key = os.environ["AWS_SECRET_ACCESS_KEY"]
         token = os.environ["AWS_SESSION_TOKEN"]
 
-    region = os.environ["AWS_REGION"]
+    region = "us-east-1"
 
     if access_key is None or secret_key is None:
         print('No access key is available.')
