@@ -14,6 +14,7 @@ A demonstration using @cyberark Conjur's authn-iam integration with AWS Lambda.
    5. `CONJUR_CERT_FILE`: Path to the Conjur TLS certificate file, if not using a trusted TLS certificate (self-signed or LetsEncrypt.
    6. `IAM_ROLE_NAME`: Name of the IAM role assigned to the Lambda function.
 3. Adjust the Lambda's Timeout to 1 minute to avoid task timeout errors.
+4. Adjust the Conjur variable value in "lambda_function.py", line 17, to match the secret which you'd like to print to screen
 
 ## Lambda Best Practices
 
